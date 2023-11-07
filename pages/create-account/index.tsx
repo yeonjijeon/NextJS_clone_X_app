@@ -23,8 +23,9 @@ export default function CreateAccount() {
   const [isSuccess, setIsSuccess] = useState(false)
   const { register, handleSubmit } = useForm<JoinForm>()
 
-  const popupHandler = () => setIsCreate((prev) => !prev)
-  const successHandler = () => router.push('/')
+  const openPop = () => setIsCreate((prev) => !prev)
+  const goToHome = () => router.push('/')
+  const goToLogin = () => router.push('/log-in')
   const onValid = (data: JoinForm) => {
     if (!data) return
     join(data)
@@ -46,7 +47,7 @@ export default function CreateAccount() {
         <div className="flex justify-start items-center fixed w-[30rem] h-3/5 bg-white z-10 rounded-2xl ">
           <div
             className="absolute top-0 left-0 p-3 cursor-pointer"
-            onClick={popupHandler}
+            onClick={openPop}
           >
             <svg
               className="h-5 w-5"
@@ -98,7 +99,7 @@ export default function CreateAccount() {
         <div className="flex justify-center items-center fixed w-[30rem] h-2/5 bg-white z-10 rounded-2xl flex-col space-y-10">
           <div className="text-2xl font-bold">가입이 완료되었습니다.</div>
           <button
-            onClick={successHandler}
+            onClick={goToHome}
             className="w-2/3 border h-14 rounded-full bg-black text-white font-semibold hover:bg-gray-800"
           >
             이용하기
@@ -166,7 +167,7 @@ export default function CreateAccount() {
 
                 <button
                   className="w-72 h-11 border bg-sky-500 rounded-full hover:bg-sky-600 transition-colors "
-                  onClick={popupHandler}
+                  onClick={openPop}
                 >
                   <div className="flex space-x-2 items-center justify-center">
                     <span className="font-bold text-white">계정 만들기</span>
@@ -183,7 +184,10 @@ export default function CreateAccount() {
             </div>
             <div>
               <div className="font-bold py-4">이미 트위터에 가입하셨나요?</div>
-              <button className="w-72 h-10 border border-gray-200 rounded-full hover:bg-sky-100 hover:border-gray-300 transition-colors mb-2">
+              <button
+                onClick={goToLogin}
+                className="w-72 h-10 border border-gray-200 rounded-full hover:bg-sky-100 hover:border-gray-300 transition-colors mb-2"
+              >
                 <span className="font-bold text-sky-500">로그인</span>
               </button>
             </div>

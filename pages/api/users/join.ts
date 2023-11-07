@@ -15,8 +15,6 @@ async function handler(
     },
   })
 
-  console.log(user)
-
   return res.json({
     ok: user ? true : false,
   })

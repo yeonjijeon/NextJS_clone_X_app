@@ -22,16 +22,21 @@ export default function LogIn() {
     login(data)
   }
 
+  const goToJoin = () => router.push('/create-account')
+
   useEffect(() => {
     if (data?.ok) {
       router.push('/')
     }
   }, [data, router])
   return (
-    <div className="bg-gray-300">
+    <div className="flex h-screen w-screen items-center justify-center bg-gray-300">
       <Header title="X에 로그인하기" />
-      <div className="flex justify-start items-center fixed w-[30rem] h-3/5 bg-white z-10 rounded-2xl ">
-        <div className="absolute top-0 left-0 p-3 cursor-pointer">
+      <div className="flex justify-center items-center fixed w-[30rem] h-3/5 bg-white z-10 rounded-2xl ">
+        <div
+          onClick={goToJoin}
+          className="absolute top-0 left-0 p-3 cursor-pointer"
+        >
           <svg
             className="h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +67,14 @@ export default function LogIn() {
               />
             </div>
             <button className="w-full border h-14 rounded-full bg-black text-white font-semibold hover:bg-gray-800">
-              {loading ? '진행중..' : '등록'}
+              {loading ? '진행중..' : '로그인하기'}
             </button>
+            <div
+              onClick={goToJoin}
+              className="text-center text-sm underline text-blue-400 cursor-pointer"
+            >
+              계정 만들기
+            </div>
           </div>
         </form>
       </div>

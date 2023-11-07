@@ -24,10 +24,10 @@ async function handler(
   req.session.user = {
     id: loginUser?.id,
     nickname: loginUser?.nickname,
+    email: loginUser?.email,
   }
-  await req.session.save()
 
-  console.log(loginUser)
+  await req.session.save()
 
   return res.json({
     ok: loginUser ? true : false,
