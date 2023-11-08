@@ -24,11 +24,20 @@ async function handler(
       createdAt: 'desc',
     },
   })
-  console.log(posts)
+
+  const userPostLike = await client.like.findMany({
+    where: {
+      userId: user?.id,
+    },
+    select: {
+      postId: true,
+    },
+  })
 
   res.json({
     ok: posts ? true : false,
     posts: posts,
+    userPostLike: userPostLike,
   })
 }
 

@@ -25,10 +25,15 @@ export default function LogIn() {
   const goToJoin = () => router.push('/create-account')
 
   useEffect(() => {
-    if (data?.ok) {
-      router.push('/')
+    if (data) {
+      if (data.ok) {
+        router.push('/')
+      } else {
+        alert('로그인에 실패하였습니다. 다시 시도해주세요.')
+      }
     }
   }, [data, router])
+
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-gray-300">
       <Header title="X에 로그인하기" />
@@ -47,7 +52,7 @@ export default function LogIn() {
         </div>
         <form onSubmit={handleSubmit(onValid)}>
           <div className="flex flex-col p-16 space-y-11 w-full">
-            <div className="text-3xl font-bold">계정을 생성하세요</div>
+            <div className="text-3xl font-bold">계정 로그인 하세요</div>
             <div className="space-y-6 ">
               <Input
                 register={register('email', {

@@ -99,10 +99,10 @@ export default function CreateAccount() {
         <div className="flex justify-center items-center fixed w-[30rem] h-2/5 bg-white z-10 rounded-2xl flex-col space-y-10">
           <div className="text-2xl font-bold">가입이 완료되었습니다.</div>
           <button
-            onClick={goToHome}
+            onClick={goToLogin}
             className="w-2/3 border h-14 rounded-full bg-black text-white font-semibold hover:bg-gray-800"
           >
-            이용하기
+            로그인하기
           </button>
         </div>
       )}

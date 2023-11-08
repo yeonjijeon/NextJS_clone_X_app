@@ -5,7 +5,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
   const router = useRouter()
   const goHome = () => router.replace('/')
   return (
-    <div className="flex flex-col mr-12 w-1/5 my-3 relative">
+    <>
       <div className="space-y-6 ">
         <div className="flex justify-start items-center ">
           <svg
@@ -149,12 +149,14 @@ export default function MainMenu({ nickname = '', email = '' }) {
         </div>
       </div>
 
-      <div className="flex items-center absolute bottom-0 w-full bg-white rounded-full p-2">
-        <div className="flex w-1/4">
-          <div className="rounded-full bg-gray-300 w-12 h-12">
-            <span className="flex items-center justify-center text-2xl font-bold h-4/5">
-              {nickname[0]}
-            </span>
+      <div className="flex items-center absolute bottom-0 w-max bg-white rounded-full p-2">
+        <div className="flex w-1/4 pr-6">
+          <div>
+            <div className="rounded-full bg-sky-500 w-12 h-12 pr-1">
+              <span className="flex items-center justify-center text-2xl font-bold w-full h-full text-white">
+                {nickname[0]?.toUpperCase()}
+              </span>
+            </div>
           </div>
         </div>
         <div className="flex flex-col pr-10 w-2/4">
@@ -172,6 +174,6 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </svg>
         </div>
       </div>
-    </div>
+    </>
   )
 }
