@@ -3,13 +3,16 @@ import Logo from './Logo'
 
 export default function MainMenu({ nickname = '', email = '' }) {
   const router = useRouter()
-  const goHome = () => router.replace('/')
+  const goHome = () => router.push('/')
   return (
-    <>
-      <div className="space-y-6 ">
-        <div className="flex justify-start items-center ">
+    <div className="flex flex-col pr-12 w-[20rem] my-3 relative">
+      <div className="space-y-3 w-full">
+        <div
+          onClick={goHome}
+          className="flex justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors "
+        >
           <svg
-            className="w-7 h-7 cursor-pointer"
+            className="w-7 h-7"
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
             viewBox="0 0 512 512"
@@ -17,7 +20,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
             <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
           </svg>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors ">
           <div>
             <svg
               className="w-7 h-7"
@@ -32,7 +35,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
             Home
           </span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -45,7 +48,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </div>
           <span className="text-xl">Explore</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -58,7 +61,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </div>
           <span className="text-xl">Notifications</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -71,7 +74,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </div>
           <span className="text-xl">Messages</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -84,7 +87,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </div>
           <span className="text-xl">Lists</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -97,7 +100,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </div>
           <span className="text-xl">Bookmarks</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -110,13 +113,13 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </div>
           <span className="text-xl">Communities</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <Logo className="w-7 h-7" />
           </div>
           <span className="text-xl">Premium</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -129,7 +132,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </div>
           <span className="text-xl">Profile</span>
         </div>
-        <div className="flex space-x-5 justify-start items-center cursor-pointer">
+        <div className="flex space-x-5 justify-start items-center w-min p-2 cursor-pointer hover:bg-gray-200 rounded-full transition-colors">
           <div>
             <svg
               className="w-7 h-7"
@@ -149,7 +152,7 @@ export default function MainMenu({ nickname = '', email = '' }) {
         </div>
       </div>
 
-      <div className="flex items-center absolute bottom-0 w-max bg-white rounded-full p-2">
+      <div className="flex items-center absolute bottom-0 w-max bg-white p-2 hover:bg-gray-200 rounded-full transition-colors cursor-pointer">
         <div className="flex w-1/4 pr-6">
           <div>
             <div className="rounded-full bg-sky-500 w-12 h-12 pr-1">
@@ -174,6 +177,6 @@ export default function MainMenu({ nickname = '', email = '' }) {
           </svg>
         </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -52,14 +52,14 @@ export default function Home() {
   const goToTweet = (postId: number) => router.push(`/tweet/${postId}`)
 
   return (
-    <div className="flex justify-between px-20 w-screen h-screen ">
+    <div className="flex justify-center w-screen h-screen ">
       <Header title="Home" />
-      <div className="flex flex-col mr-12 w-[20rem] my-3 relative">
-        <MainMenu nickname={user?.nickname} email={user?.email} />
-      </div>
+
+      <MainMenu nickname={user?.nickname} email={user?.email} />
+
       <div className="border border-gray-100" />
 
-      <div className="flex flex-col w-[60rem]">
+      <div className="flex flex-col w-max">
         <div className="flex justify-center items-center border border-b border-x-0">
           <div className="flex justify-center items-center w-1/2 cursor-pointer hover:bg-gray-200 p-4 font-bold">
             For you
@@ -76,10 +76,10 @@ export default function Home() {
           <form onSubmit={handleSubmit(onUpload)}>
             <textarea
               {...register('content')}
-              className="w-full border-b-0 px-16 pt-8 pb-10 resize-none overflow-y-hidden focus:outline-none "
+              className="w-full border-b-0 px-16 pt-8 pb-10 resize-none overflow-y-hidden focus:outline-none"
               placeholder="What is happening?!"
             />
-            <div className="py-2 border border-x-0 border-t-0 flex justify-end pr-4">
+            <div className="p-4 border border-x-0 border-t-0 flex justify-end">
               <button className="bg-sky-500 text-white font-bold px-5 py-2 rounded-full hover:bg-sky-600">
                 {uploadLoading ? 'Wait..' : 'Post'}
               </button>
@@ -134,9 +134,7 @@ export default function Home() {
       </div>
       <div className="border border-gray-100" />
 
-      <div className="flex flex-col w-[20rem] my-3 ">
-        <Search />
-      </div>
+      <Search />
     </div>
   )
 }
